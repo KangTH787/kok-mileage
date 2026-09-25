@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#16181d" media="(prefers-color-scheme: dark)">
+  <title>콕 마일리지 모아보기</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="head">
+    <div class="topbar">
+      <button id="menuBtn" class="icon-btn" type="button" aria-label="메뉴 열기" aria-controls="drawer" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <div class="brand">
+        <h1>콕 마일리지</h1>
+        <p id="updated">불러오는 중…</p>
+      </div>
+    </div>
+
+    <div class="controls" id="controls">
+      <div class="chips" id="sortChips" role="radiogroup" aria-label="정렬">
+        <button type="button" class="chip" role="radio" data-sort="deadline">마감임박</button>
+        <button type="button" class="chip" role="radio" data-sort="mileage">마일리지순</button>
+        <button type="button" class="chip" role="radio" data-sort="popular">인기순</button>
+        <button type="button" class="chip" role="radio" data-sort="latest">최신순</button>
+      </div>
+      <div class="subbar">
+        <label class="toggle">
+          <input type="checkbox" id="openOnly" checked>
+          <span class="switch" aria-hidden="true"></span>
+          신청 가능한 것만
+        </label>
+        <span id="count" class="count"></span>
+      </div>
+    </div>
+  </header>
+
+  <main id="listView">
+    <ul id="list" class="cards" aria-live="polite"></ul>
+    <p id="empty" class="empty" hidden>조건에 맞는 프로그램이 없어요.</p>
+  </main>
+
+  <section id="guideView" class="guide" hidden>
+    <div class="guide-bar">
+      <button id="backBtn" class="icon-btn" type="button" aria-label="목록으로">
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <span id="guideCrumb" class="crumb"></span>
+    </div>
+    <article id="guideBody" class="guide-body"></article>
+  </section>
+
+  <div id="scrim" class="scrim" hidden></div>
+  <nav id="drawer" class="drawer" aria-label="안내 메뉴" inert>
+    <div class="drawer-head">
+      <strong>안내</strong>
+      <button id="closeBtn" class="icon-btn" type="button" aria-label="메뉴 닫기">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <ul id="menu" class="menu"></ul>
+  </nav>
+</body>
+</html>
