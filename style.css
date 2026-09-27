@@ -193,3 +193,7 @@ main { max-width: 640px; margin: 0 auto; padding: 12px 16px calc(24px + env(safe
 @media (prefers-reduced-motion: reduce) {
   .drawer, .switch, .switch::after, .caret { transition: none !important; }
 }
+.guide-body ol { margin: 6px 0; padding-left: 22px; }
+.guide-body li span { font-size: 14px; color: var(--muted); }
+.guide-body ol.checks li { margin: 12px 0; }
+.guide-body ol.checks li::marker { font-weight: 800; color: var(--accent); }
