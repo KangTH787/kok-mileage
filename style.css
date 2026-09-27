@@ -197,3 +197,27 @@ main { max-width: 640px; margin: 0 auto; padding: 12px 16px calc(24px + env(safe
 .guide-body li span { font-size: 14px; color: var(--muted); }
 .guide-body ol.checks li { margin: 12px 0; }
 .guide-body ol.checks li::marker { font-weight: 800; color: var(--accent); }
+
+/* 장학금 조건 배지 / 안내 */
+.cond { margin: 0 0 4px; font-size: 12.5px; font-weight: 700; color: var(--tag4-t); }
+.note { margin: 14px 2px 0; font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+
+/* 체크리스트 */
+.progress { margin: 4px 0 12px; font-size: 15px; font-weight: 700; }
+.progress #checkCount { color: var(--accent); font-size: 20px; }
+.progress small { font-weight: 400; color: var(--muted); font-size: 12.5px; }
+.guide-body ul.checklist { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.checklist label {
+  display: grid; grid-template-columns: auto auto 1fr; gap: 10px; align-items: start;
+  padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; cursor: pointer;
+}
+.checklist input { width: 20px; height: 20px; margin: 2px 0 0; accent-color: var(--accent); }
+.checklist .num { font-weight: 800; color: var(--accent); line-height: 1.6; }
+.checklist small { font-size: 13.5px; color: var(--muted); }
+.checklist label:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+
+/* 장학금 표 */
+.guide-body table.prize { border: 1px solid var(--line); border-radius: 12px; border-collapse: separate; border-spacing: 0; overflow: hidden; }
+.guide-body .prize th { padding: 10px 16px; background: var(--bg); font-size: 13px; text-align: left; color: var(--muted); }
+.guide-body .prize th:not(:first-child), .guide-body .prize td:not(:first-child) { text-align: right; }
+.guide-body .prize tr:first-child + tr td { border-top: 0; }

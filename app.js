@@ -57,6 +57,17 @@ const SCORE_TABLE = SCORES.map(([group, rows], i) => `
   </table>
 </details>`).join("");
 
+/* 장학금 표 — [등수, 학년별 인원, 1인당 금액(만 원)] */
+const PRIZES = [
+  ["1등", 1, 100], ["2~3등", 2, 80], ["4~6등", 3, 70], ["7~9등", 3, 60], ["10~16등", 7, 50],
+  ["17~23등", 7, 40], ["24~30등", 7, 35], ["31~40등", 10, 30], ["41~55등", 15, 25], ["56~70등", 15, 20],
+];
+const PRIZE_TABLE = `
+<table class="score prize">
+  <tr><th>학년 내 등수</th><th>인원</th><th>1인당</th></tr>
+  ${PRIZES.map(([rank, n, won]) => `<tr><td>${rank}</td><td>${n}명</td><td>${won}만 원</td></tr>`).join("")}
+</table>`;
+
 const GUIDE = [
   {
     id: "about",
@@ -79,7 +90,7 @@ const GUIDE = [
   <li>등록금 차감이 아니라 <b>개인 계좌로 입금</b>돼요.</li>
   <li>성적우수 마일리지 장학금을 받았어도 함께 받을 수 있어요.</li>
 </ul>
-<p class="lead">올해 장학금액은 폴라리스 [공지사항 → 학년도별 공지]에서 확인하세요.</p>
+<p class="lead">학년별 70명을 뽑고, 1등은 100만 원, 70등까지 최소 20만 원이에요. 자세한 금액은 [선발·지급 방식]을 보세요.</p>
 ${SRC_BOARD}`,
       },
       {
@@ -87,14 +98,15 @@ ${SRC_BOARD}`,
         title: "장학금 조건",
         body: `
 <p class="lead">5가지를 <b>모두</b> 채워야 하고, 매년 새로 채워야 해요.</p>
-<ol class="checks">
-  <li><b>4대 역량진단검사 완료</b><br>핵심역량 · 직업기초역량 · 취업역량 · 학습역량<br><span>1학년은 4개 모두, 2학년 이상은 3개 이상</span></li>
-  <li><b>맞춤형 진로상담 또는 맞춤형 취업상담 1회 이상</b></li>
-  <li><b>6개 분야 중 3개 분야 이상에서 각 5점 이상</b><br><span>전공실무 · 진로및상담 · 취창업 · 글로벌 · 학습 · 봉사</span></li>
-  <li><b>총 50점 이상</b></li>
-  <li><b>2학기 정규학기 재학생</b><br><span>2학기 학적 변동자, 휴학생, 외국인, 정규학기 유예·초과자는 제외</span></li>
-</ol>
-<p>1·2번은 검사나 상담을 했더라도 <b>마일리지가 실제로 적립돼야</b> 충족으로 인정돼요.</p>
+<div class="progress"><span id="checkCount">0</span> / 5 충족 <small>· 체크 상태는 이 기기에만 저장돼요</small></div>
+<ul class="checklist">
+  <li><label><input type="checkbox" data-check="1"><span class="num">1</span><div><b>4대 역량진단검사 완료</b><br>핵심역량 · 직업기초역량 · 취업역량 · 학습역량<br><small>1학년은 4개 모두, 2학년 이상은 3개 이상</small></div></label></li>
+  <li><label><input type="checkbox" data-check="2"><span class="num">2</span><div><b>맞춤형 진로상담 또는 맞춤형 취업상담 1회 이상</b></div></label></li>
+  <li><label><input type="checkbox" data-check="3"><span class="num">3</span><div><b>6개 분야 중 3개 분야 이상에서 각 5점 이상</b><br><small>전공실무 · 진로및상담 · 취창업 · 글로벌 · 학습 · 봉사</small></div></label></li>
+  <li><label><input type="checkbox" data-check="4"><span class="num">4</span><div><b>총 50점 이상</b></div></label></li>
+  <li><label><input type="checkbox" data-check="5"><span class="num">5</span><div><b>2학기 정규학기 재학생</b><br><small>2학기 학적 변동자, 휴학생, 외국인, 정규학기 유예·초과자는 제외</small></div></label></li>
+</ul>
+<p>1·2번은 검사나 상담을 했더라도 <b>마일리지가 실제로 적립돼야</b> 충족으로 인정돼요. 적립 여부는 [내 현황 확인하기]를 참고하세요.</p>
 ${SRC_BOARD}`,
       },
       {
@@ -150,12 +162,32 @@ ${SRC_BOARD}${SRC_DETAIL}`,
   <li>장학금은 개인 계좌로 입금돼요.</li>
 </ol>
 <ul>
-  <li>선발 인원과 금액은 [공지사항 → 학년도별 공지]에서 확인하세요.</li>
   <li>조건은 해마다 새로 채워야 해요. 올해 받았어도 내년에 다시 충족해야 해요.</li>
 </ul>
+<h3>장학금액</h3>
+<p><b>학년별 70명</b>(전체 280명)을 뽑고, 총 1억 원이 지급돼요.</p>
+${PRIZE_TABLE}
 ${SRC_BOARD}`,
       },
     ],
+  },
+  {
+    id: "mystatus",
+    title: "내 현황 확인하기",
+    body: `
+<p>이 사이트는 로그인 없이 보는 공용 목록이라 <b>개인 현황은 폴라리스에서</b> 확인해야 해요.</p>
+<h3>보유 콕 마일리지</h3>
+<ul>
+  <li>폴라리스 → 오른쪽 위 <b>MYPAGE</b>를 누르면 바로 보여요.</li>
+</ul>
+<h3>프로그램 현황</h3>
+<p>폴라리스 → 역량개발 → 콕(KKOK) 프로그램에서 볼 수 있어요.</p>
+<ul>
+  <li><b>나의 프로그램 현황</b>: 신청한 프로그램</li>
+  <li><b>수료 현황</b>: 수료 처리된 프로그램</li>
+  <li><b>노쇼 현황</b>: 노쇼 처리된 프로그램</li>
+</ul>
+<a class="linkbtn" href="https://polaris.ks.ac.kr/" target="_blank" rel="noopener noreferrer">폴라리스 열기 ↗</a>`,
   },
   {
     id: "noshow",
@@ -164,7 +196,7 @@ ${SRC_BOARD}`,
 <p>콕 프로그램을 신청한 뒤 <b>취소하지 않고 불참하면 '노쇼'로 처리</b>돼요.</p>
 <h3>노쇼하면</h3>
 <ul>
-  <li>노쇼 기록이 남고, 폴라리스 마이페이지에서 본인 노쇼 현황을 확인할 수 있어요.</li>
+  <li>노쇼 기록이 남아요. 폴라리스 → 역량개발 → 콕(KKOK) 프로그램 → <b>노쇼 현황</b>에서 확인할 수 있어요.</li>
   <li>학교는 노쇼 현황을 바탕으로 추가 제도 도입을 검토 중이라고 공지했어요.</li>
 </ul>
 <h3>꼭 알아둘 것</h3>
@@ -182,6 +214,12 @@ const LINKS = [
 const POLARIS = "https://polaris.ks.ac.kr/";
 const SORTS = ["deadline", "mileage", "popular", "latest"];
 const TAG_CLASS = { 자기관리역량: "t1", 디지털기술역량: "t2", 공감소통역량: "t3", 창의융합역량: "t4" };
+// 과정명으로 장학금 조건 해당 여부를 추정 — 오판 가능
+const COND_RULES = [
+  [/역량\s*진단\s*검사/, "①"],
+  [/맞춤형\s*(진로|취업)\s*상담/, "②"],
+];
+const CHECK_KEY = `checks-${new Date().getFullYear()}`; // 조건은 해마다 새로 채워야 하므로 연도별 저장
 const WEEK = ["일", "월", "화", "수", "목", "금", "토"];
 
 const $ = (id) => document.getElementById(id);
@@ -225,8 +263,10 @@ function enrich(p, today) {
   const dday = toDay(p.apply_end) - today;
   const sinceStart = Math.max(1, today - toDay(p.apply_start) + 1);
   const closed = /마감/.test(p.status || "") || !(dday >= 0);
+  const cond = COND_RULES.find(([re]) => re.test(p.title || ""));
   return {
     ...p,
+    cond: cond ? cond[1] : null,
     dday,
     closed,
     // 조회수 누적 편향 보정: 신청 시작 후 경과일로 나눈 일평균 조회수
@@ -264,6 +304,7 @@ function card(p) {
       <span class="status">${esc(p.status)}</span>
       <span class="mileage"><b>${esc(p.mileage ?? "-")}</b>점</span>
     </div>
+    ${p.cond ? `<p class="cond">🎓 장학금 조건 ${p.cond}에 해당할 수 있어요</p>` : ""}
     <h2 class="title">${esc(p.title)}</h2>
     ${p.benefit ? `<p class="benefit">🎁 ${esc(p.benefit)}</p>` : ""}
     <div class="meta">
@@ -282,6 +323,7 @@ function render() {
     .sort(COMPARE[state.sort]);
   $("list").innerHTML = rows.map(card).join("");
   $("empty").hidden = rows.length > 0;
+  $("condNote").hidden = !rows.some((p) => p.cond);
   $("count").textContent = `${rows.length}개`;
   document.querySelectorAll("#sortChips .chip").forEach((b) =>
     b.setAttribute("aria-checked", String(b.dataset.sort === state.sort)));
@@ -353,9 +395,25 @@ function route() {
     <div class="next">
       ${others.map((o) => `<button type="button" data-guide="${g.id}/${o.id}">${esc(o.title)} →</button>`).join("")}
     </div>`;
+  restoreChecks();
   $("guideView").hidden = false;
   $("guideView").scrollTop = 0;
   document.body.style.overflow = "hidden";
+}
+
+/* ── 장학금 조건 체크리스트 ── */
+function readChecks() {
+  try { return JSON.parse(load(CHECK_KEY, "[]")).map(String); } catch { return []; }
+}
+function restoreChecks() {
+  const saved = new Set(readChecks());
+  const boxes = $("guideBody").querySelectorAll("input[data-check]");
+  boxes.forEach((b) => { b.checked = saved.has(b.dataset.check); });
+  updateCheckCount();
+}
+function updateCheckCount() {
+  const el = $("checkCount");
+  if (el) el.textContent = $("guideBody").querySelectorAll("input[data-check]:checked").length;
 }
 
 /* ── 초기화 ── */
@@ -375,6 +433,12 @@ async function init() {
   $("guideBody").addEventListener("click", (e) => {
     const b = e.target.closest("[data-guide]");
     if (b) location.hash = `#guide/${b.dataset.guide}`;
+  });
+  $("guideBody").addEventListener("change", (e) => {
+    if (!e.target.matches("input[data-check]")) return;
+    const on = [...$("guideBody").querySelectorAll("input[data-check]:checked")].map((b) => b.dataset.check);
+    save(CHECK_KEY, JSON.stringify(on));
+    updateCheckCount();
   });
   window.addEventListener("hashchange", route);
   route();
