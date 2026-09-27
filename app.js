@@ -5,6 +5,58 @@
  * "2026학년도 콕(KKOK) 마일리지 제도 안내" 원문 기준으로 채울 것.
  */
 const TODO = '<p class="todo">학교 공지 원문을 확인한 뒤 채울 예정이에요.</p>';
+const SRC_DETAIL = '<p class="src">출처: 2026학년도 콕(KKOK) 마일리지 항목별 세부사항 안내서 (성과관리센터)</p>';
+const NOSHOW_URL =
+  "https://polaris.ks.ac.kr/site/program/board/basicboard/view?menuid=001005001&amp;pagesize=10&amp;boardtypeid=20&amp;boardid=19805";
+
+/* 항목별 배점표 — [항목, 점수, 필수여부] */
+const SCORES = [
+  ["전공실무", [
+    ["국가기술/전문 자격증", "30"], ["(국가공인)민간·기타 자격증", "20"],
+    ["핵심역량진단검사", "10", 1], ["직업기초역량진단검사", "5", 1],
+    ["교내 대회 수상", "5·10·20"], ["교외 대회 수상 (시도·지역)", "70"], ["교외 대회 수상 (국제·전국)", "80"],
+  ]],
+  ["진로·상담", [
+    ["맞춤형 진로상담", "5", 1], ["진로 집단상담", "25"], ["진로교육 (특강·워크숍)", "5~35"],
+    ["진로활동 (캠프·동아리 등)", "20"], ["접수면접", "5"], ["심리검사 (해석·상담)", "5"],
+    ["집단상담", "25"], ["폭력예방교육", "5"],
+  ]],
+  ["취·창업", [
+    ["취업역량진단검사", "5", 1], ["맞춤형 취업상담", "5", 1], ["취업특강", "5~35"], ["취업교육", "5~35"],
+    ["취업동아리", "20"], ["취업캠프", "5~20"], ["외부기관 협업 프로그램", "10"], ["취업대비 경진대회", "20·50"],
+    ["취업역량강화교육 (자격증)", "5~35"], ["채용설명회·박람회", "5·10"],
+    ["학생창업", "30"], ["창업 동아리", "20·40"], ["창업 프로그램", "10·50"],
+  ]],
+  ["글로벌", [
+    ["영어 어학성적", "10~50"], ["제2외국어·기타 어학성적", "20~50"], ["버디 프로그램", "20"],
+    ["BUDDY+", "20·40"], ["Korean Language Buddy", "25·50"], ["Mentoring Buddy", "20·40"],
+  ]],
+  ["학습", [
+    ["학습역량진단검사", "5", 1], ["도서관 이용교육·문화행사", "5"], ["책장 속 극장", "5"],
+    ["B.E.F. 클럽 (독서회)", "5"], ["도전 북 챌린지", "5"], ["동영상 강좌", "5~20"],
+    ["KS-철인 기초·인성·읽기·듣기·말하기·쓰기", "각 15"], ["별별청춘 백일장", "20"],
+    ["KS-철인 말하기 대회", "최대 50"], ["영어 말하기 대회", "최대 50"],
+    ["학습법 특강", "5"], ["KS학습코칭", "5"], ["CTL공모전", "20·50"], ["학습공동체 COMPASS", "20"],
+    ["K-CESA", "30"], ["수업시연 경연대회", "50"], ["교육학특강", "35"], ["현직교사 초청 특강", "10"],
+    ["학교현장실습 수기 공모전", "20"], ["학생 소통 강화 프로그램", "5"], ["학과 멘토링", "20"],
+    ["기타 비교과 프로그램", "5"],
+  ]],
+  ["봉사·리더십·기타", [
+    ["사회봉사 100시간 이상", "100"], ["80시간 이상", "80"], ["50시간 이상", "50"], ["40시간 이상", "40"],
+    ["30시간 이상", "30"], ["20시간 이상", "25"], ["11~19시간", "20"], ["6~10시간", "10"], ["2~5시간", "5"],
+    ["리더십 프로그램", "20"], ["설문조사 등 (사전 공지된 것만)", "2"],
+  ]],
+];
+
+const SCORE_TABLE = SCORES.map(([group, rows], i) => `
+<details${i === 0 ? " open" : ""}>
+  <summary>${group}</summary>
+  <table class="score">
+    ${rows.map(([name, pt, req]) =>
+      `<tr><td>${name}${req ? ' <span class="req">필수</span>' : ""}</td><td>${pt}점</td></tr>`).join("")}
+  </table>
+</details>`).join("");
+
 const GUIDE = [
   {
     id: "about",
@@ -12,9 +64,59 @@ const GUIDE = [
     children: [
       { id: "overview", title: "개요", body: TODO },
       { id: "minimum", title: "최소 조건", body: TODO },
-      { id: "earn", title: "쌓는 방법", body: TODO },
+      {
+        id: "earn",
+        title: "쌓는 방법",
+        body: `
+<h3>1. 콕 프로그램 참여</h3>
+<p>이 사이트 목록에 있는 프로그램이에요. 폴라리스에서 신청하고 참여를 마치면 주관 부서가 명단을 처리한 뒤 적립돼요.</p>
+<ul>
+  <li>대부분 <b>수료 기준</b>이 있어요 (출석 80% 이상, 만족도 조사 참여 등).</li>
+  <li>도서관 행사는 10분 이상 지각하거나 중간에 나가면 점수가 없어요.</li>
+</ul>
+<h3>2. 역량진단검사</h3>
+<p>폴라리스 HOME 화면 중하단에서 바로 할 수 있고, 각각 1회만 인정돼요.</p>
+<ul>
+  <li>핵심역량 10점 · 직업기초역량 5점 · 취업역량 5점 · 학습역량 5점</li>
+</ul>
+<h3>3. 개인 활동 증빙</h3>
+<p>자격증, 수상, 어학성적, 리더십 활동은 직접 증빙을 올려야 해요.</p>
+<ul>
+  <li>폴라리스 → 마이페이지 → 역량개발 → 개인활동 → 증빙자료 업로드 → 관리자 승인</li>
+  <li>사회봉사는 <b>사회봉사 활동 인증</b>에서 시간을 승인받은 뒤, 11월에 열리는 <b>사회봉사 마일리지</b> 메뉴에서 한 번 더 신청해야 해요.</li>
+  <li><b>마감: 2026. 12. 31.(목) 13시</b></li>
+</ul>
+<h3>유의사항</h3>
+<ul>
+  <li>장학금이나 상품을 받은 프로그램은 마일리지가 지급되지 않을 수 있어요 (중복 수혜 방지).</li>
+  <li>백일장·말하기 대회는 <b>입상자에게 마일리지를 주지 않아요.</b></li>
+</ul>
+${SRC_DETAIL}`,
+      },
+      {
+        id: "scores",
+        title: "항목별 배점",
+        body: `<p class="lead"><span class="req">필수</span> 표시는 안내서 원문 표기를 그대로 옮긴 거예요.</p>${SCORE_TABLE}${SRC_DETAIL}`,
+      },
       { id: "calc", title: "산출 방법", body: TODO },
     ],
+  },
+  {
+    id: "noshow",
+    title: "노쇼 제도",
+    body: `
+<p>콕 프로그램을 신청한 뒤 <b>취소하지 않고 불참하면 '노쇼'로 처리</b>돼요.</p>
+<h3>노쇼하면</h3>
+<ul>
+  <li>노쇼 기록이 남고, 폴라리스 마이페이지에서 본인 노쇼 현황을 확인할 수 있어요.</li>
+  <li>학교는 노쇼 현황을 바탕으로 추가 제도 도입을 검토 중이라고 공지했어요.</li>
+</ul>
+<h3>꼭 알아둘 것</h3>
+<ul>
+  <li>별도 안내가 없으면 <b>신청 기간 = 취소 기간</b>이에요. 신청 기간이 끝나면 목록에서 사라져서 직접 취소할 수 없어요.</li>
+  <li>신청 기간과 실제 진행일 사이에 간격이 있는 경우가 많으니, 신청할 때 진행일 일정을 먼저 확인하세요.</li>
+</ul>
+<a class="linkbtn" href="${NOSHOW_URL}" target="_blank" rel="noopener noreferrer">신청 취소 방법 자세히 보기 ↗</a>`,
   },
 ];
 const LINKS = [
@@ -131,7 +233,9 @@ function render() {
 
 /* ── 드로어 ── */
 function buildMenu() {
-  const groups = GUIDE.map((g) => `
+  const groups = GUIDE.map((g) => !g.children
+    ? `<li><button type="button" data-guide="${g.id}">${esc(g.title)}<span class="caret">›</span></button></li>`
+    : `
 <li class="group" data-group="${g.id}">
   <button type="button" aria-expanded="false">${esc(g.title)}<span class="caret">›</span></button>
   <ul class="sub">
@@ -174,17 +278,19 @@ function closeDrawer() {
 
 /* ── 안내 화면 (해시 라우팅: 휴대폰 뒤로가기 지원) ── */
 function route() {
-  const m = location.hash.match(/^#guide\/([\w-]+)\/([\w-]+)$/);
+  const m = location.hash.match(/^#guide\/([\w-]+)(?:\/([\w-]+))?$/);
   const g = m && GUIDE.find((x) => x.id === m[1]);
-  const idx = g ? g.children.findIndex((x) => x.id === m[2]) : -1;
-  if (idx < 0) {
+  // 하위 항목이 있는 그룹은 #guide/그룹/항목, 단독 항목은 #guide/항목
+  const c = !g ? null
+    : g.children ? (m[2] && g.children.find((x) => x.id === m[2]))
+    : (!m[2] && g);
+  if (!c) {
     $("guideView").hidden = true;
     document.body.style.overflow = "";
     return;
   }
-  const c = g.children[idx];
-  const others = g.children.filter((x) => x !== c);
-  $("guideCrumb").textContent = g.title;
+  const others = g.children ? g.children.filter((x) => x !== c) : [];
+  $("guideCrumb").textContent = g.children ? g.title : "안내";
   $("guideBody").innerHTML = `
     <h2>${esc(c.title)}</h2>
     ${c.body}
