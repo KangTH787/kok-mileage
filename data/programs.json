@@ -1,7 +1,24 @@
 {
-  "updated_at": "2026-09-27T23:51+09:00",
-  "count": 19,
+  "updated_at": "2026-09-28T19:12+09:00",
+  "count": 16,
   "programs": [
+    {
+      "id": "16669",
+      "title": "2026년 제2기 Pre-KS 창업동아리 육성사업",
+      "benefit": null,
+      "apply_start": "2026-09-28",
+      "apply_end": "2026-10-12",
+      "course_start": "2026-10-13",
+      "course_end": "2026-12-22",
+      "competencies": [
+        "자기관리역량",
+        "창의융합역량"
+      ],
+      "mileage": 20,
+      "status": "신청가능",
+      "views": 790,
+      "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16669"
+    },
     {
       "id": "16665",
       "title": "2026학년도 중앙도서관 이용자 만족도 조사(홍보)",
@@ -16,7 +33,7 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 476,
+      "views": 611,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16665"
     },
     {
@@ -24,7 +41,7 @@
       "title": "2026-2학기 초청 교환학생 버디 프로그램",
       "benefit": null,
       "apply_start": "2026-09-22",
-      "apply_end": "2026-09-27",
+      "apply_end": "2026-09-30",
       "course_start": "2026-10-06",
       "course_end": "2026-11-09",
       "competencies": [
@@ -33,26 +50,8 @@
       ],
       "mileage": 20,
       "status": "신청가능",
-      "views": 300,
+      "views": 361,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16664"
-    },
-    {
-      "id": "16666",
-      "title": "[맞춤형직무교육] KSU 방송아카데미 공개강좌, 방송 제작 및 진행, 아나운싱 실무",
-      "benefit": null,
-      "apply_start": "2026-09-21",
-      "apply_end": "2026-09-28",
-      "course_start": "2026-09-28",
-      "course_end": "2026-09-28",
-      "competencies": [
-        "자기관리역량",
-        "디지털기술역량",
-        "공감소통역량"
-      ],
-      "mileage": 10,
-      "status": "신청가능",
-      "views": 245,
-      "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16666"
     },
     {
       "id": "16663",
@@ -67,12 +66,12 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 582,
+      "views": 704,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16663"
     },
     {
       "id": "16660",
-      "title": "[15.구직탐색·지원:②] 2026 대학연합 현직자 직무 토크콘서트 2차",
+      "title": "[15.구직탐색·지원:②구인정보탐색] 2026 대학연합 현직자 직무 토크콘서트 2차",
       "benefit": "참여자 추첨 - 갤럭시 워치, 여행용캐리어 등",
       "apply_start": "2026-09-18",
       "apply_end": "2026-10-09",
@@ -84,7 +83,7 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 318,
+      "views": 410,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16660"
     },
     {
@@ -100,8 +99,8 @@
         "창의융합역량"
       ],
       "mileage": 5,
-      "status": "신청가능",
-      "views": 566,
+      "status": "신청마감",
+      "views": 612,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16662"
     },
     {
@@ -117,32 +116,15 @@
       ],
       "mileage": 20,
       "status": "신청가능",
-      "views": 1633,
+      "views": 1676,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16629"
     },
     {
-      "id": "16652",
-      "title": "[11.조직적합성분석: ①기업경영환경분석] 비즈니스트랜드특강 7탄",
-      "benefit": null,
-      "apply_start": "2026-09-10",
-      "apply_end": "2026-09-28",
-      "course_start": "2026-09-29",
-      "course_end": "2026-09-29",
-      "competencies": [
-        "자기관리역량",
-        "창의융합역량"
-      ],
-      "mileage": 5,
-      "status": "신청가능",
-      "views": 661,
-      "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16652"
-    },
-    {
       "id": "16630",
-      "title": "[3.진로설계: ②진로설계] 2026-2학기 브런치직무찾기특강 *AI시리즈*",
+      "title": "[3.진로설계: ②진로설계] 2026-2학기 브런치직무찾기특강 *AI시리즈*재맞고 연계*",
       "benefit": "브런치+음료 제공",
       "apply_start": "2026-09-09",
-      "apply_end": "2026-09-28",
+      "apply_end": "2026-09-29",
       "course_start": "2026-09-29",
       "course_end": "2026-09-30",
       "competencies": [
@@ -150,7 +132,7 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 2105,
+      "views": 2256,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16630"
     },
     {
@@ -167,7 +149,7 @@
       ],
       "mileage": 5,
       "status": "신청마감",
-      "views": 1406,
+      "views": 1429,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16633"
     },
     {
@@ -184,7 +166,7 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 764,
+      "views": 789,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16632"
     },
     {
@@ -202,26 +184,8 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 849,
+      "views": 871,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16622"
-    },
-    {
-      "id": "16619",
-      "title": "[안내] 9월 도전! 북챌린지: 교환독서",
-      "benefit": null,
-      "apply_start": "2026-09-01",
-      "apply_end": "2026-09-30",
-      "course_start": "2026-09-01",
-      "course_end": "2026-09-30",
-      "competencies": [
-        "자기관리역량",
-        "공감소통역량",
-        "창의융합역량"
-      ],
-      "mileage": 5,
-      "status": "신청가능",
-      "views": 705,
-      "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16619"
     },
     {
       "id": "16620",
@@ -237,7 +201,7 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 256,
+      "views": 264,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16620"
     },
     {
@@ -254,25 +218,8 @@
       ],
       "mileage": 5,
       "status": "신청마감",
-      "views": 323,
+      "views": 329,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16615"
-    },
-    {
-      "id": "16616",
-      "title": "[13.구직서류작성: ②이력서③자기소개서④직무능력소개서] 입사지원서캠프",
-      "benefit": "콕 마일리지 10점 부여",
-      "apply_start": "2026-08-28",
-      "apply_end": "2026-09-28",
-      "course_start": "2026-09-30",
-      "course_end": "2026-10-08",
-      "competencies": [
-        "디지털기술역량",
-        "창의융합역량"
-      ],
-      "mileage": 10,
-      "status": "신청가능",
-      "views": 1401,
-      "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16616"
     },
     {
       "id": "16589",
@@ -289,7 +236,7 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 794,
+      "views": 848,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16589"
     },
     {
@@ -306,7 +253,7 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 3910,
+      "views": 3935,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16323"
     },
     {
@@ -323,7 +270,7 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 3860,
+      "views": 3898,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16321"
     }
   ]
