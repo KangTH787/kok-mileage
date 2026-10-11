@@ -213,8 +213,13 @@ const LINKS = [
 
 const POLARIS = "https://polaris.ks.ac.kr/";
 const SORTS = ["deadline", "mileage", "popular", "latest"];
+// 아이콘: Lucide(ISC) 경로를 직접 넣음 — 모두 선 두께 2
+const svg = (d, size = 18) =>
+  `<svg viewBox="0 0 24 24" width="${size}" height="${size}" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+const CARET = `<span class="caret">${svg('<path d="m9 18 6-6-6-6"/>')}</span>`;
+const EXT = `<span class="ext">${svg('<path d="M7 7h10v10"/><path d="M7 17 17 7"/>', 16)}</span>`;
 const GIFT_ICON =
-  '<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M5 12v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8M7.5 8a2.5 2.5 0 1 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 1 1 0 5"/></svg>';
+  '<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M5 12v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8M7.5 8a2.5 2.5 0 1 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 1 1 0 5"/></svg>';
 // 과정명으로 장학금 조건 해당 여부를 추정 — 오판 가능
 const COND_RULES = [
   [/역량\s*진단\s*검사/, "①"],
@@ -287,7 +292,9 @@ const COMPARE = {
 function ddayBadge(p) {
   if (p.closed) return '<span class="dday">마감</span>';
   const label = p.dday === 0 ? "D-DAY" : `D-${p.dday}`;
-  return `<span class="dday${p.dday <= 2 ? " urgent" : ""}">${label}</span>`;
+  // 새 색 없이 밝기로 단계 구분: 2일 이하 적색 / 3~7일 흰색 / 8일 이상 회색
+  const level = p.dday <= 2 ? " urgent" : p.dday <= 7 ? " soon" : "";
+  return `<span class="dday${level}">${label}</span>`;
 }
 
 function card(p) {
@@ -331,18 +338,18 @@ function render() {
 
 /* ── 드로어 ── */
 function buildMenu() {
-  const home = `<li><button type="button" data-home>메인<span class="caret">›</span></button></li>`;
+  const home = `<li><button type="button" data-home>메인${CARET}</button></li>`;
   const groups = GUIDE.map((g) => !g.children
-    ? `<li><button type="button" data-guide="${g.id}">${esc(g.title)}<span class="caret">›</span></button></li>`
+    ? `<li><button type="button" data-guide="${g.id}">${esc(g.title)}${CARET}</button></li>`
     : `
 <li class="group" data-group="${g.id}">
-  <button type="button" aria-expanded="false">${esc(g.title)}<span class="caret">›</span></button>
+  <button type="button" aria-expanded="false">${esc(g.title)}${CARET}</button>
   <ul class="sub">
     ${g.children.map((c) => `<li><button type="button" data-guide="${g.id}/${c.id}">${esc(c.title)}</button></li>`).join("")}
   </ul>
 </li>`).join("");
   const links = LINKS.map((l) =>
-    `<li><a href="${esc(l.href)}" target="_blank" rel="noopener noreferrer">${esc(l.title)}<span class="ext">↗</span></a></li>`).join("");
+    `<li><a href="${esc(l.href)}" target="_blank" rel="noopener noreferrer">${esc(l.title)}${EXT}</a></li>`).join("");
   $("menu").innerHTML = home + groups + "<li><hr></li>" + links;
 
   $("menu").addEventListener("click", (e) => {
