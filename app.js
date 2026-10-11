@@ -213,7 +213,8 @@ const LINKS = [
 
 const POLARIS = "https://polaris.ks.ac.kr/";
 const SORTS = ["deadline", "mileage", "popular", "latest"];
-const TAG_CLASS = { 자기관리역량: "t1", 디지털기술역량: "t2", 공감소통역량: "t3", 창의융합역량: "t4" };
+const GIFT_ICON =
+  '<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M5 12v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8M7.5 8a2.5 2.5 0 1 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 1 1 0 5"/></svg>';
 // 과정명으로 장학금 조건 해당 여부를 추정 — 오판 가능
 const COND_RULES = [
   [/역량\s*진단\s*검사/, "①"],
@@ -284,15 +285,14 @@ const COMPARE = {
 
 /* ── 렌더링 ── */
 function ddayBadge(p) {
-  if (p.closed) return '<span class="badge off">마감</span>';
+  if (p.closed) return '<span class="dday">마감</span>';
   const label = p.dday === 0 ? "D-DAY" : `D-${p.dday}`;
-  return `<span class="badge${p.dday <= 2 ? " urgent" : ""}">${label}</span>`;
+  return `<span class="dday${p.dday <= 2 ? " urgent" : ""}">${label}</span>`;
 }
 
 function card(p) {
-  const tags = (p.competencies || [])
-    .map((c) => `<span class="tag ${TAG_CLASS[c] || "t0"}">${esc(c.replace(/역량$/, ""))}</span>`)
-    .join("");
+  // 역량은 참고 정보라 강조 없이 텍스트로만
+  const tags = (p.competencies || []).map((c) => esc(c.replace(/역량$/, ""))).join(" · ");
   const extra = state.sort === "popular"
     ? `<span>하루 ${Math.round(p.viewsPerDay)}회 조회</span>`
     : `<span>조회 ${esc((p.views ?? 0).toLocaleString())}</span>`;
@@ -301,18 +301,18 @@ function card(p) {
   <a href="${esc(safeUrl(p.url))}" target="_blank" rel="noopener noreferrer">
     <div class="card-top">
       ${ddayBadge(p)}
-      <span class="status">${esc(p.status)}</span>
+      ${p.status && p.status !== "신청가능" ? `<span class="status">${esc(p.status)}</span>` : ""}
       <span class="mileage"><b>${esc(p.mileage ?? "-")}</b>점</span>
     </div>
-    ${p.cond ? `<p class="cond">🎓 장학금 조건 ${p.cond}에 해당할 수 있어요</p>` : ""}
+    ${p.cond ? `<p class="cond">장학금 조건 ${p.cond}에 해당할 수 있어요</p>` : ""}
     <h2 class="title">${esc(p.title)}</h2>
-    ${p.benefit ? `<p class="benefit">🎁 ${esc(p.benefit)}</p>` : ""}
+    ${p.benefit ? `<p class="benefit">${GIFT_ICON}<span>${esc(p.benefit)}</span></p>` : ""}
     <div class="meta">
       <span>신청 ~${esc(fmt(p.apply_end, true))}</span>
       <span>진행 ${esc(range(p.course_start, p.course_end))}</span>
       ${extra}
     </div>
-    ${tags ? `<div class="tags">${tags}</div>` : ""}
+    ${tags ? `<p class="tags">${tags}</p>` : ""}
   </a>
 </li>`;
 }
@@ -331,6 +331,7 @@ function render() {
 
 /* ── 드로어 ── */
 function buildMenu() {
+  const home = `<li><button type="button" data-home>메인<span class="caret">›</span></button></li>`;
   const groups = GUIDE.map((g) => !g.children
     ? `<li><button type="button" data-guide="${g.id}">${esc(g.title)}<span class="caret">›</span></button></li>`
     : `
@@ -342,7 +343,7 @@ function buildMenu() {
 </li>`).join("");
   const links = LINKS.map((l) =>
     `<li><a href="${esc(l.href)}" target="_blank" rel="noopener noreferrer">${esc(l.title)}<span class="ext">↗</span></a></li>`).join("");
-  $("menu").innerHTML = groups + "<li><hr></li>" + links;
+  $("menu").innerHTML = home + groups + "<li><hr></li>" + links;
 
   $("menu").addEventListener("click", (e) => {
     const g = e.target.closest(".group > button");
@@ -352,10 +353,15 @@ function buildMenu() {
       g.setAttribute("aria-expanded", String(li.classList.contains("open")));
       return;
     }
+    if (e.target.closest("[data-home]")) {
+      closeDrawer();
+      goHome();
+      return;
+    }
     const s = e.target.closest("[data-guide]");
     if (s) {
       closeDrawer();
-      location.hash = `#guide/${s.dataset.guide}`;
+      goGuide(s.dataset.guide);
     }
   });
 }
@@ -374,6 +380,35 @@ function closeDrawer() {
   $("menuBtn").setAttribute("aria-expanded", "false");
 }
 
+/* ── 화면 이동 ──
+ * 안내 페이지끼리 이동할 때는 히스토리를 쌓지 않고 교체(replace)한다.
+ * 그래서 안내 페이지를 몇 개 봤든 뒤로가기 한 번이면 메인으로 돌아간다.
+ */
+let pushedFromHome = false; // 이번 방문에서 메인 → 안내로 push했는지
+
+const inGuide = () => location.hash.startsWith("#guide/");
+
+function goGuide(path) {
+  const hash = `#guide/${path}`;
+  if (inGuide()) {
+    location.replace(hash);
+  } else {
+    pushedFromHome = true;
+    location.hash = hash;
+  }
+}
+
+function goHome() {
+  if (!inGuide()) return;
+  if (pushedFromHome) {
+    history.back(); // 메인에서 들어온 경우: 쌓인 기록 1개만 되돌림
+  } else {
+    // 안내 페이지 링크로 바로 들어온 경우: 사이트 밖으로 나가지 않도록 교체
+    history.replaceState(null, "", location.pathname + location.search);
+    route();
+  }
+}
+
 /* ── 안내 화면 (해시 라우팅: 휴대폰 뒤로가기 지원) ── */
 function route() {
   const m = location.hash.match(/^#guide\/([\w-]+)(?:\/([\w-]+))?$/);
@@ -382,22 +417,35 @@ function route() {
   const c = !g ? null
     : g.children ? (m[2] && g.children.find((x) => x.id === m[2]))
     : (!m[2] && g);
+  document.querySelectorAll("#menu [data-guide], #menu [data-home]").forEach((b) => {
+    const cur = c ? b.dataset.guide === location.hash.slice(7) : b.hasAttribute("data-home");
+    cur ? b.setAttribute("aria-current", "page") : b.removeAttribute("aria-current");
+  });
+  // 현재 보고 있는 페이지가 속한 그룹은 드로어에서 펼쳐 둔다
+  if (c && g.children) {
+    const li = document.querySelector(`#menu .group[data-group="${g.id}"]`);
+    li?.classList.add("open");
+    li?.firstElementChild.setAttribute("aria-expanded", "true");
+  }
   if (!c) {
+    pushedFromHome = false;
     $("guideView").hidden = true;
     document.body.style.overflow = "";
     return;
   }
-  const others = g.children ? g.children.filter((x) => x !== c) : [];
+  // 같은 묶음의 페이지를 메인의 정렬 칩 자리에 보여준다 (단독 항목끼리는 한 묶음)
+  const siblings = g.children || GUIDE.filter((x) => !x.children);
+  const pathOf = (o) => (g.children ? `${g.id}/${o.id}` : o.id);
+  $("guideTitle").textContent = c.title;
   $("guideCrumb").textContent = g.children ? g.title : "안내";
-  $("guideBody").innerHTML = `
-    <h2>${esc(c.title)}</h2>
-    ${c.body}
-    <div class="next">
-      ${others.map((o) => `<button type="button" data-guide="${g.id}/${o.id}">${esc(o.title)} →</button>`).join("")}
-    </div>`;
+  $("guideChips").innerHTML = siblings.map((o) =>
+    `<button type="button" class="chip" data-guide="${pathOf(o)}"${o === c ? ' aria-current="page"' : ""}>${esc(o.title)}</button>`).join("");
+  $("guidePos").textContent = `${siblings.indexOf(c) + 1} / ${siblings.length}`;
+  $("guideBody").innerHTML = c.body;
   restoreChecks();
   $("guideView").hidden = false;
   $("guideView").scrollTop = 0;
+  $("guideChips").querySelector("[aria-current]")?.scrollIntoView({ inline: "center", block: "nearest" });
   document.body.style.overflow = "hidden";
 }
 
@@ -424,15 +472,18 @@ async function init() {
 
   buildMenu();
   $("menuBtn").addEventListener("click", openDrawer);
+  $("guideMenuBtn").addEventListener("click", openDrawer);
   $("closeBtn").addEventListener("click", closeDrawer);
   $("scrim").addEventListener("click", closeDrawer);
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeDrawer(); });
-  $("backBtn").addEventListener("click", () => {
-    history.length > 1 ? history.back() : (location.hash = "");
+  $("backBtn").addEventListener("click", goHome);
+  $("guideChips").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-guide]");
+    if (b) goGuide(b.dataset.guide);
   });
   $("guideBody").addEventListener("click", (e) => {
     const b = e.target.closest("[data-guide]");
-    if (b) location.hash = `#guide/${b.dataset.guide}`;
+    if (b) goGuide(b.dataset.guide);
   });
   $("guideBody").addEventListener("change", (e) => {
     if (!e.target.matches("input[data-check]")) return;

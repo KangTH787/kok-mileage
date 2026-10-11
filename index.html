@@ -6,8 +6,8 @@
   <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; object-src 'none'">
   <meta name="referrer" content="no-referrer">
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#16181d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#121212">
+  <meta name="color-scheme" content="dark">
   <title>콕 마일리지 모아보기</title>
   <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
@@ -45,16 +45,31 @@
   <main id="listView">
     <ul id="list" class="cards" aria-live="polite"></ul>
     <p id="empty" class="empty" hidden>조건에 맞는 프로그램이 없어요.</p>
-    <p id="condNote" class="note" hidden>🎓 장학금 조건 표시는 과정명으로 자동 판별한 거라 틀릴 수 있어요. 실제 인정 여부는 프로그램 공지로 확인하세요.</p>
+    <p id="condNote" class="note" hidden>장학금 조건 표시는 과정명으로 자동 판별한 거라 틀릴 수 있어요. 실제 인정 여부는 프로그램 공지로 확인하세요.</p>
   </main>
 
   <section id="guideView" class="guide" hidden>
-    <div class="guide-bar">
-      <button id="backBtn" class="icon-btn" type="button" aria-label="목록으로">
-        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <span id="guideCrumb" class="crumb"></span>
-    </div>
+    <header class="head">
+      <div class="topbar">
+        <button id="guideMenuBtn" class="icon-btn" type="button" aria-label="메뉴 열기" aria-controls="drawer">
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <div class="brand">
+          <h1 id="guideTitle"></h1>
+          <p id="guideCrumb"></p>
+        </div>
+      </div>
+      <div class="controls">
+        <nav class="chips" id="guideChips" aria-label="관련 안내"></nav>
+        <div class="subbar">
+          <button id="backBtn" class="back-link" type="button">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            메인으로
+          </button>
+          <span id="guidePos" class="count"></span>
+        </div>
+      </div>
+    </header>
     <article id="guideBody" class="guide-body"></article>
   </section>
 
