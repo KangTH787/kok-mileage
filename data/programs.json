@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11T00:36+09:00",
+  "updated_at": "2026-10-11T10:20+09:00",
   "count": 18,
   "programs": [
     {
@@ -49,7 +49,7 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 136,
+      "views": 138,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16682"
     },
     {
@@ -187,7 +187,7 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 799,
+      "views": 802,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16656"
     },
     {
@@ -222,7 +222,7 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 600,
+      "views": 601,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16672"
     },
     {
@@ -239,7 +239,7 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 844,
+      "views": 846,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16668"
     },
     {
@@ -256,7 +256,7 @@
       ],
       "mileage": 20,
       "status": "신청가능",
-      "views": 1535,
+      "views": 1541,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16669"
     },
     {
@@ -291,7 +291,7 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 4172,
+      "views": 4173,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16323"
     },
     {
