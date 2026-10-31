@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-31T18:59+09:00",
-  "count": 6,
+  "updated_at": "2026-11-01T00:31+09:00",
+  "count": 5,
   "programs": [
     {
       "id": "16714",
@@ -16,7 +16,7 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 937,
+      "views": 950,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16714"
     },
     {
@@ -33,7 +33,7 @@
       ],
       "mileage": 50,
       "status": "신청가능",
-      "views": 956,
+      "views": 966,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16707"
     },
     {
@@ -49,26 +49,8 @@
       ],
       "mileage": 20,
       "status": "신청가능",
-      "views": 566,
+      "views": 570,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16705"
-    },
-    {
-      "id": "16656",
-      "title": "10월 도전! 북 챌린지 : 전자책 챌린지 안내",
-      "benefit": "콕마일리지, 다이소 상품권 추첨 증정",
-      "apply_start": "2026-10-01",
-      "apply_end": "2026-10-31",
-      "course_start": "2026-10-01",
-      "course_end": "2026-10-31",
-      "competencies": [
-        "자기관리역량",
-        "공감소통역량",
-        "창의융합역량"
-      ],
-      "mileage": 5,
-      "status": "신청가능",
-      "views": 1409,
-      "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16656"
     },
     {
       "id": "16668",
@@ -84,7 +66,7 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 1372,
+      "views": 1378,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16668"
     },
     {
@@ -101,7 +83,7 @@
       ],
       "mileage": 5,
       "status": "신청마감",
-      "views": 296,
+      "views": 297,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16682"
     }
   ]
