@@ -1,7 +1,94 @@
 {
-  "updated_at": "2026-11-02T01:27+09:00",
-  "count": 6,
+  "updated_at": "2026-11-02T10:53+09:00",
+  "count": 13,
   "programs": [
+    {
+      "id": "16729",
+      "title": "2026학년도 책장 속 극장 11월(사색) 오프라인 상영회",
+      "benefit": null,
+      "apply_start": "2026-11-02",
+      "apply_end": "2026-11-25",
+      "course_start": "2026-11-24",
+      "course_end": "2026-11-25",
+      "competencies": [
+        "공감소통역량",
+        "창의융합역량"
+      ],
+      "mileage": 5,
+      "status": "신청가능",
+      "views": 71,
+      "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16729"
+    },
+    {
+      "id": "16728",
+      "title": "2026학년도 책장 속 극장 11월(사색) 온라인 프로그램",
+      "benefit": null,
+      "apply_start": "2026-11-02",
+      "apply_end": "2026-11-30",
+      "course_start": "2026-11-02",
+      "course_end": "2026-11-30",
+      "competencies": [
+        "공감소통역량",
+        "창의융합역량"
+      ],
+      "mileage": 5,
+      "status": "신청가능",
+      "views": 203,
+      "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16728"
+    },
+    {
+      "id": "16726",
+      "title": "도전! 북챌린지: 교환독서",
+      "benefit": null,
+      "apply_start": "2026-11-02",
+      "apply_end": "2026-12-11",
+      "course_start": "2026-11-02",
+      "course_end": "2026-12-11",
+      "competencies": [
+        "자기관리역량",
+        "공감소통역량",
+        "창의융합역량"
+      ],
+      "mileage": 5,
+      "status": "신청가능",
+      "views": 65,
+      "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16726"
+    },
+    {
+      "id": "16719",
+      "title": "11월 도전 북챌린지: 최애의 도서관 챌린지",
+      "benefit": "무작위 추첨 상품 증정",
+      "apply_start": "2026-11-02",
+      "apply_end": "2026-11-30",
+      "course_start": "2026-11-02",
+      "course_end": "2026-11-30",
+      "competencies": [
+        "자기관리역량",
+        "공감소통역량",
+        "창의융합역량"
+      ],
+      "mileage": 5,
+      "status": "신청가능",
+      "views": 106,
+      "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16719"
+    },
+    {
+      "id": "16727",
+      "title": "2026 Library Cinema November (Spequlation) Offline Screening_The Taxi Driver (Kor Audio, Eng subtitles)",
+      "benefit": null,
+      "apply_start": "2026-11-02",
+      "apply_end": "2026-11-26",
+      "course_start": "2026-11-26",
+      "course_end": "2026-11-26",
+      "competencies": [
+        "공감소통역량",
+        "창의융합역량"
+      ],
+      "mileage": 5,
+      "status": "신청가능",
+      "views": 13,
+      "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16727"
+    },
     {
       "id": "16725",
       "title": "2026년 제2회 경성 창업아이템 경진대회",
@@ -16,8 +103,25 @@
       ],
       "mileage": 50,
       "status": "신청가능",
-      "views": 23,
+      "views": 86,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16725"
+    },
+    {
+      "id": "16731",
+      "title": "[온라인교육] 2026년 11월 연구 및 학습지원 교육 안내(홍보용 신청X)",
+      "benefit": null,
+      "apply_start": "2026-11-01",
+      "apply_end": "2026-11-30",
+      "course_start": "2026-11-04",
+      "course_end": "2026-11-30",
+      "competencies": [
+        "공감소통역량",
+        "창의융합역량"
+      ],
+      "mileage": 5,
+      "status": "신청가능",
+      "views": 0,
+      "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16731"
     },
     {
       "id": "16707",
@@ -33,7 +137,7 @@
       ],
       "mileage": 50,
       "status": "신청가능",
-      "views": 1007,
+      "views": 1028,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16707"
     },
     {
@@ -49,8 +153,43 @@
       ],
       "mileage": 20,
       "status": "신청가능",
-      "views": 620,
+      "views": 627,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16705"
+    },
+    {
+      "id": "16730",
+      "title": "[맞춤형직무교육] KSU 방송아카데미 공개강좌, 스포츠 중계방송 제작 실무",
+      "benefit": null,
+      "apply_start": "2026-10-19",
+      "apply_end": "2026-11-09",
+      "course_start": "2026-11-09",
+      "course_end": "2026-11-09",
+      "competencies": [
+        "자기관리역량",
+        "디지털기술역량",
+        "공감소통역량"
+      ],
+      "mileage": 10,
+      "status": "신청가능",
+      "views": 40,
+      "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16730"
+    },
+    {
+      "id": "16682",
+      "title": "🥪2026-2 Library User Education \"Brunch and Learn\"🧃",
+      "benefit": "snacks served",
+      "apply_start": "2026-10-06",
+      "apply_end": "2026-11-04",
+      "course_start": "2026-11-02",
+      "course_end": "2026-11-04",
+      "competencies": [
+        "공감소통역량",
+        "창의융합역량"
+      ],
+      "mileage": 5,
+      "status": "신청가능",
+      "views": 310,
+      "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16682"
     },
     {
       "id": "16668",
@@ -66,7 +205,7 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 1434,
+      "views": 1445,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16668"
     },
     {
@@ -83,25 +222,8 @@
       ],
       "mileage": 5,
       "status": "대기신청",
-      "views": 1005,
+      "views": 1014,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16714"
-    },
-    {
-      "id": "16682",
-      "title": "🥪2026-2 Library User Education \"Brunch and Learn\"🧃",
-      "benefit": "snacks served",
-      "apply_start": "2026-10-06",
-      "apply_end": "2026-11-04",
-      "course_start": "2026-11-02",
-      "course_end": "2026-11-04",
-      "competencies": [
-        "공감소통역량",
-        "창의융합역량"
-      ],
-      "mileage": 5,
-      "status": "신청마감",
-      "views": 304,
-      "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16682"
     }
   ]
 }
