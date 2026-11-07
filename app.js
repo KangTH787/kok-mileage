@@ -471,6 +471,31 @@ function updateCheckCount() {
   if (el) el.textContent = $("guideBody").querySelectorAll("input[data-check]:checked").length;
 }
 
+/* ── 다크 모드 ──
+ * 처음엔 휴대폰 설정을 따르고, 스위치를 누르면 그 선택을 기억한다.
+ * "기기 설정 따르기"를 누르면 기억한 선택을 지우고 다시 휴대폰 설정을 따른다.
+ */
+const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+const savedTheme = () => document.documentElement.getAttribute("data-theme");
+const isDark = () => (savedTheme() ? savedTheme() === "dark" : darkQuery.matches);
+
+function syncThemeUI() {
+  const dark = isDark();
+  $("themeSwitch").setAttribute("aria-checked", String(dark));
+  $("followSystem").hidden = !savedTheme();
+  document.querySelector('meta[name="theme-color"]')?.setAttribute("content", dark ? "#000000" : "#f2f2f7");
+}
+function setTheme(theme) {
+  if (theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    save("theme", theme);
+  } else {
+    document.documentElement.removeAttribute("data-theme");
+    try { localStorage.removeItem("theme"); } catch { /* 저장 불가 환경 무시 */ }
+  }
+  syncThemeUI();
+}
+
 /* ── 초기화 ── */
 async function init() {
   state.sort = SORTS.includes(load("sort")) ? load("sort") : "deadline";
@@ -481,6 +506,10 @@ async function init() {
   $("menuBtn").addEventListener("click", openDrawer);
   $("guideMenuBtn").addEventListener("click", openDrawer);
   $("closeBtn").addEventListener("click", closeDrawer);
+  $("themeSwitch").addEventListener("click", () => setTheme(isDark() ? "light" : "dark"));
+  $("followSystem").addEventListener("click", () => setTheme(null));
+  darkQuery.addEventListener("change", syncThemeUI); // 자동 모드에서 휴대폰 설정이 바뀌면 스위치도 따라감
+  syncThemeUI();
   $("scrim").addEventListener("click", closeDrawer);
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeDrawer(); });
   $("backBtn").addEventListener("click", goHome);

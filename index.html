@@ -6,11 +6,12 @@
   <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; object-src 'none'">
   <meta name="referrer" content="no-referrer">
-  <meta name="theme-color" content="#121311">
-  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#f2f2f7">
+  <meta name="color-scheme" content="light dark">
   <title>콕 마일리지 모아보기</title>
-  <link rel="stylesheet" href="style.css?v=3">
-  <script src="app.js?v=3" defer></script>
+  <script src="theme.js?v=4"></script>
+  <link rel="stylesheet" href="style.css?v=4">
+  <script src="app.js?v=4" defer></script>
 </head>
 <body>
   <header class="head">
@@ -82,6 +83,13 @@
       </button>
     </div>
     <ul id="menu" class="menu"></ul>
+    <div class="drawer-foot">
+      <button id="themeSwitch" class="theme-row" type="button" role="switch" aria-checked="false">
+        다크 모드
+        <span class="switch" aria-hidden="true"></span>
+      </button>
+      <button id="followSystem" class="follow-system" type="button" hidden>기기 설정 따르기</button>
+    </div>
   </nav>
 </body>
 </html>
