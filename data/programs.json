@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T02:25+09:00",
+  "updated_at": "2026-11-15T11:11+09:00",
   "count": 22,
   "programs": [
     {
@@ -16,7 +16,7 @@
       ],
       "mileage": 25,
       "status": "신청가능",
-      "views": 95,
+      "views": 148,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16752"
     },
     {
@@ -33,7 +33,7 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 220,
+      "views": 242,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16744"
     },
     {
@@ -49,7 +49,7 @@
       ],
       "mileage": 25,
       "status": "신청가능",
-      "views": 208,
+      "views": 253,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16749"
     },
     {
@@ -65,7 +65,7 @@
       ],
       "mileage": 25,
       "status": "신청가능",
-      "views": 168,
+      "views": 211,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16747"
     },
     {
@@ -82,7 +82,7 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 718,
+      "views": 728,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16729"
     },
     {
@@ -100,7 +100,7 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 566,
+      "views": 593,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16726"
     },
     {
@@ -118,7 +118,7 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 826,
+      "views": 838,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16719"
     },
     {
@@ -135,7 +135,7 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 175,
+      "views": 177,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16727"
     },
     {
@@ -152,7 +152,7 @@
       ],
       "mileage": 50,
       "status": "신청가능",
-      "views": 1481,
+      "views": 1713,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16725"
     },
     {
@@ -169,7 +169,7 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 238,
+      "views": 241,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16731"
     },
     {
@@ -186,7 +186,7 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 293,
+      "views": 300,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16718"
     },
     {
@@ -203,7 +203,7 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 263,
+      "views": 270,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16717"
     },
     {
@@ -220,7 +220,7 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 291,
+      "views": 293,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16716"
     },
     {
@@ -238,7 +238,7 @@
       ],
       "mileage": 10,
       "status": "신청가능",
-      "views": 210,
+      "views": 212,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16736"
     },
     {
@@ -256,7 +256,7 @@
       ],
       "mileage": 10,
       "status": "신청가능",
-      "views": 352,
+      "views": 364,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16735"
     },
     {
@@ -273,7 +273,7 @@
       ],
       "mileage": 5,
       "status": "신청가능",
-      "views": 1749,
+      "views": 1759,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16668"
     },
     {
@@ -290,7 +290,7 @@
       ],
       "mileage": 5,
       "status": "대기신청",
-      "views": 323,
+      "views": 332,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16741"
     },
     {
@@ -307,7 +307,7 @@
       ],
       "mileage": 5,
       "status": "신청마감",
-      "views": 214,
+      "views": 216,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16745"
     },
     {
@@ -324,7 +324,7 @@
       ],
       "mileage": 5,
       "status": "신청마감",
-      "views": 192,
+      "views": 195,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16743"
     },
     {
@@ -341,7 +341,7 @@
       ],
       "mileage": 5,
       "status": "신청마감",
-      "views": 473,
+      "views": 476,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16742"
     },
     {
@@ -358,7 +358,7 @@
       ],
       "mileage": 5,
       "status": "신청마감",
-      "views": 1433,
+      "views": 1437,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16738"
     },
     {
@@ -375,7 +375,7 @@
       ],
       "mileage": 5,
       "status": "신청마감",
-      "views": 1235,
+      "views": 1242,
       "url": "https://polaris.ks.ac.kr/site/reservation/lecture/lectureDetail?reservegroupid=1&menuid=001002002002&submode=lecture&reserveprogramid=L&viewtype=L&lecturegroupid=16728"
     }
   ]
